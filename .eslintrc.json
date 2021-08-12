@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "next",
+    "next/core-web-vitals"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": ["warn"],
+    "react/self-closing-comp": "warn",
+    "react/jsx-curly-brace-presence": ["warn", { "props": "never", "children": "never" }],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  "overrides": [
+    {
+      "files": ["./pages/api/**/*"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}
