@@ -25,6 +25,13 @@
       "rules": {
         "no-console": "off"
       }
+    },
+    {
+      "files": ["./prisma/seed.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "no-console": "off"
+      }
     }
   ]
 }
