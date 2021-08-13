@@ -12,23 +12,13 @@ export default function Slug() {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  try {
-    const link = await getLinkBySlug(query.slug as string)
+  const link = await getLinkBySlug(query.slug as string)
 
-    return {
-      props: {},
-      redirect: {
-        status: link ? 301 : 404,
-        destination: link ? link.url : '/404',
-      },
-    }
-  } catch (error) {
-    return {
-      props: {},
-      redirect: {
-        statusCode: 500,
-        destination: '/500',
-      },
-    }
+  return {
+    props: {},
+    redirect: {
+      status: link ? 301 : 404,
+      destination: link ? link.url : '/404',
+    },
   }
 }
