@@ -2,6 +2,11 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+  moduleNameMapper: {
+    '@services/(.*)': '<rootDir>/services/$1',
+    '@utils/(.*)': '<rootDir>/utils/$1',
+    '@lib/(.*)': '<rootDir>/lib/$1',
+  },
   transform: {
     // Use babel-jest to transpile tests with the next/babel preset
     // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
