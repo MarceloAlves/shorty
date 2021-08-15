@@ -16,10 +16,18 @@ const Heading: ComponentSingleStyleConfig = {
   },
 }
 
+const Link: ComponentSingleStyleConfig = {
+  baseStyle: {
+    color: 'teal.500',
+    textDecoration: 'underline',
+  },
+}
+
 const theme = extendTheme({
   config,
   components: {
     Heading,
+    Link,
   },
 })
 
