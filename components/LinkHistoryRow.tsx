@@ -23,12 +23,10 @@ export default function LinkHistoryRow({ link }: Props) {
         />
       </Td>
       <Td>
-        <Text isTruncated maxWidth='100px'>
-          {link.slug}
-        </Text>
+        <Text isTruncated>{link.slug}</Text>
       </Td>
       <Td>
-        <Text isTruncated maxWidth='300px'>
+        <Text isTruncated maxWidth={{ base: 150, sm: 150, md: 250, lg: 350 }}>
           {link.url}
         </Text>
       </Td>

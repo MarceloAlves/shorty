@@ -16,7 +16,7 @@ export default function LinkHistory() {
             <AccordionIcon />
           </AccordionButton>
         </h2>
-        <AccordionPanel pb={4}>
+        <AccordionPanel>
           {state.context.linkHistory.length === 0 && <Text marginTop={1}>No links yet. Create one!</Text>}
           {state.context.linkHistory.length >= 1 && <LinkHistoryTable links={state.context.linkHistory} />}
         </AccordionPanel>
