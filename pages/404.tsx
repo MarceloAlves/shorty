@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, Link as ChakraLink, Text, VStack } from '@chakra-ui/react'
+import { Grid, Heading, Link as ChakraLink, Text, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
 
