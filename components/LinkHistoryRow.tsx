@@ -26,8 +26,8 @@ export default function LinkHistoryRow({ link }: Props) {
         <Text isTruncated>{link.slug}</Text>
       </Td>
       <Td>
-        <Text isTruncated maxWidth={{ base: 150, sm: 150, md: 250, lg: 350 }}>
-          {link.url}
+        <Text isTruncated maxWidth={{ base: 30, sm: 150, md: 250, lg: 300 }}>
+          {link.url.replace(/^https?:\/\//, '')}
         </Text>
       </Td>
     </Tr>
