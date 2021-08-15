@@ -59,7 +59,7 @@ context('App', () => {
     cy.findByRole('textbox', { name: /enter a url:/i }).type('https://example.com')
     cy.findByRole('button', { name: 'Shorten!' }).click()
     cy.findByRole('button', { name: 'Link History' }).click()
-    cy.findByText('http://example.com').should('exist')
+    cy.findByRole('gridcell', { name: /abc123/i }).should('exist')
   })
 
   it('should show an error if link cannot be created', () => {

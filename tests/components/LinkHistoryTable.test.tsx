@@ -18,11 +18,11 @@ describe('GIVEN LinkHistoryTable', () => {
   afterEach(jest.resetAllMocks)
 
   it('should render correctly with data', async () => {
-    const { getByText, getByRole } = render(<LinkHistoryTable links={LINKS} />)
+    const { getByRole } = render(<LinkHistoryTable links={LINKS} />)
 
     expect(getByRole('button', { name: /copy to clipboard/i })).toBeInTheDocument()
-    expect(getByText(/abc123/i)).toBeInTheDocument()
-    expect(getByText(/https:\/\/example.com/i)).toBeInTheDocument()
+    expect(getByRole('gridcell', { name: /abc123/i })).toBeInTheDocument()
+    expect(getByRole('gridcell', { name: /example.com/i })).toBeInTheDocument()
   })
 
   it('should let you copy a short link', async () => {
