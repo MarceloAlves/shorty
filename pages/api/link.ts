@@ -4,6 +4,7 @@ import * as DBService from '@services/db'
 import { generateSlug } from '@utils'
 
 interface ErrorResponse {
+  code: number
   message: string
 }
 
@@ -24,6 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         // https://www.prisma.io/docs/reference/api-reference/error-reference/#p2002
         if (error.code === 'P2002') {
           res.status(409).json({
+            code: 409,
             message: 'Slug already exists',
           })
         }

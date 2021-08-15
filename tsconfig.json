@@ -15,10 +15,14 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"],
+      "@machines/*": ["./machines/*"],
+      "@providers/*": ["./providers/*"],
       "@services/*": ["./services/*"],
-      "@utils/*": ["./utils/*"],
-      "@utils": ["./utils/index.ts"]
+      "@schemas/*": ["./schemas/*"],
+      "@utils": ["./utils/index.ts"],
+      "@utils/*": ["./utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
