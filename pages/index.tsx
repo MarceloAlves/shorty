@@ -1,9 +1,10 @@
 import { Box, Container, Grid, Heading } from '@chakra-ui/react'
 import CreateLinkForm from '@components/CreateLinkForm'
+import LinkHistory from '@components/LinkHistory'
 import LinkResult from '@components/LinkResult'
+import { useAppContext } from '@providers/app'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useAppContext } from '@providers/app'
 
 const Home: NextPage = () => {
   const [state] = useAppContext()
@@ -31,6 +32,8 @@ const Home: NextPage = () => {
             {state.hasTag('showingForm') && <CreateLinkForm />}
             {state.hasTag('showingResult') && <LinkResult />}
           </Box>
+
+          <LinkHistory />
         </Container>
       </Grid>
     </div>

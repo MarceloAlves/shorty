@@ -1,15 +1,12 @@
 import { CheckIcon, CopyIcon } from '@chakra-ui/icons'
 import { Button, Fade, Input, InputGroup, InputRightElement, useClipboard, VStack } from '@chakra-ui/react'
 import { useAppContext } from '@providers/app'
+import { generateShortLink } from '@utils/linkUtils'
 
 export default function LinkResult() {
   const [state, { restart }] = useAppContext()
 
-  const host =
-    typeof window !== 'undefined' ? `${window.location.protocol}//${window.location.host}` : 'http://localhost:3001'
-
-  const shortenedLink = `${host}/${state.context.linkHistory[0].slug}`
-
+  const shortenedLink = generateShortLink(state.context.linkHistory[0])
   const { onCopy, hasCopied } = useClipboard(shortenedLink)
 
   return (
