@@ -15,6 +15,7 @@ const Home: NextPage = () => {
         <title>Shorty</title>
         <meta name='description' content='Generate short links' />
         <link rel='icon' href='/favicon.ico' />
+        <link rel='manifest' href='/manifest.json' />
       </Head>
 
       <Grid placeItems='center' minHeight='90vh' minWidth='100wh'>
