@@ -23,8 +23,9 @@
       "@schemas/*": ["./schemas/*"],
       "@utils": ["./utils/index.ts"],
       "@utils/*": ["./utils/*"]
-    }
+    },
+    "types": ["cypress", "jest", "@testing-library/cypress"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["cypress", "node_modules"]
 }

@@ -7,6 +7,10 @@ import { useState } from 'react'
 import { AppProvider } from '@providers/app'
 import ColorSchemeToggle from '@components/ColorSchemeToggle'
 
+if (process.env.NODE_ENV === 'development') {
+  require('mocks')
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient())
 

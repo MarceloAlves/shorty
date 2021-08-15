@@ -36,3 +36,7 @@ yarn-error.log*
 # sqlite db
 dev.db
 dev.db-journal
+
+# cypress
+cypress/screenshots/*
+cypress/videos/*

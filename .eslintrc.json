@@ -6,11 +6,13 @@
     "plugin:react/recommended",
     "prettier",
     "next",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "cypress"
   ],
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "cypress/globals": true
   },
   "rules": {
     "no-console": ["warn"],
