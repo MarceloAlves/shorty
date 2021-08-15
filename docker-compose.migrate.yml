@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  pg:
+    image: 'postgres:alpine'
+    container_name: 'shorty_db'
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_DB: 'shorty'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'pg:/var/lib/postgresql/data'
+    networks:
+      - default
+    restart: 'always'
+
+  prisma-migrate:
+    container_name: 'prisma_migrate'
+    build:
+      context: 'prisma'
+      dockerfile: 'Dockerfile'
+    environment:
+      DATABASE_URL: 'postgres://postgres:postgres@shorty_db:5432/shorty'
+    depends_on:
+      - 'pg'
+
+networks:
+  default:
+
+volumes:
+  pg:

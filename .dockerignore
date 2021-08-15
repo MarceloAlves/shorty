@@ -1,0 +1,4 @@
+node_modules
+.next
+.husky
+prisma/dev.db

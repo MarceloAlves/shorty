@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { AppProvider } from '@providers/app'
 import ColorSchemeToggle from '@components/ColorSchemeToggle'
 
-if (process.env.NODE_ENV === 'development') {
+if (typeof Cypress !== 'undefined') {
   require('mocks')
 }
 
