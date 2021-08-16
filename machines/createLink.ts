@@ -71,7 +71,10 @@ export const createLinkMachine = createMachine<CreateLinkMachineContext, CreateL
       },
       cannotCreateLink: {
         tags: ['showingForm'],
-        type: 'final',
+        exit: ['resetErrorCount'],
+        on: {
+          CREATE_LINK: 'validateForm',
+        },
       },
       linkCreated: {
         tags: ['showingResult'],
@@ -126,6 +129,13 @@ export const createLinkMachine = createMachine<CreateLinkMachineContext, CreateL
         return {
           value: '',
           errorMessage: null,
+          retries: 0,
+        }
+      }),
+      resetErrorCount: assign((_ctx, evt) => {
+        if (evt.type !== 'CREATE_LINK') return {}
+
+        return {
           retries: 0,
         }
       }),
