@@ -18,9 +18,6 @@ jobs:
       - name: Install Deps
         run: yarn install --frozen-lockfile
       
-      - name: Run Database Migrations
-        run: yarn docker:db:migrate
-      
       - name: Start services
         run: yarn docker:start
       
