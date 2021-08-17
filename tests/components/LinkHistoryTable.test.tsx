@@ -2,7 +2,6 @@ import LinkHistoryTable from '@components/LinkHistoryTable'
 import { Link } from '@prisma/client'
 import { render } from '@testing-library/react'
 import UserEvent from '@testing-library/user-event'
-import {} from '@chakra-ui/react'
 
 const LINKS: Link[] = [
   {
