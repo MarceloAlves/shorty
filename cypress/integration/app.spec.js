@@ -13,6 +13,13 @@ context('App', () => {
     cy.findByText(/must be a valid url/i).should('exist')
   })
 
+  it('should should show a 404 page if slug is not found', () => {
+    cy.visit('http://localhost:3001/nothere', { failOnStatusCode: false })
+    cy.findByRole('heading', { name: /uh oh/i }).should('exist')
+    cy.findByText(/we've looked everywhere and can't seem to find that link/i).should('exist')
+    cy.findByRole('link', { name: /create a new one instead\?/i }).should('exist')
+  })
+
   it('should let you create a link', () => {
     cy.window().then((window) => {
       const { worker, rest } = window.msw
