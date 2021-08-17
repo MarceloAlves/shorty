@@ -15,7 +15,13 @@ export default function CreateLinkForm() {
       <VStack spacing={2}>
         <FormControl id='url' isInvalid={!!state.context.errorMessage}>
           <FormLabel size='lg'>Enter a URL:</FormLabel>
-          <Input name='url' size='lg' onChange={(e) => updateInput(e.target.value)} value={state.context.value} />
+          <Input
+            name='url'
+            size='lg'
+            placeholder='https://example.com'
+            onChange={(e) => updateInput(e.target.value)}
+            value={state.context.value}
+          />
           <Box minHeight='29px'>
             <FormErrorMessage>{state.context.errorMessage}</FormErrorMessage>
           </Box>
