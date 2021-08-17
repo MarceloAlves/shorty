@@ -1,7 +1,7 @@
-import { CheckIcon, CopyIcon } from '@chakra-ui/icons'
-import { IconButton, Td, Text, Tr, useClipboard } from '@chakra-ui/react'
+import { Td, Text, Tr } from '@chakra-ui/react'
 import type { Link } from '@prisma/client'
 import { generateShortLink } from '@utils/linkUtils'
+import ClipboardButton from './ClipboardButton'
 
 interface Props {
   link: Link
@@ -9,18 +9,11 @@ interface Props {
 
 export default function LinkHistoryRow({ link }: Props) {
   const shortenedLink = generateShortLink(link)
-  const { hasCopied, onCopy } = useClipboard(shortenedLink)
 
   return (
     <Tr>
       <Td width='50px'>
-        <IconButton
-          size='sm'
-          aria-label='Copy to clipboard'
-          icon={hasCopied ? <CheckIcon /> : <CopyIcon />}
-          colorScheme={hasCopied ? 'green' : 'blue'}
-          onClick={onCopy}
-        />
+        <ClipboardButton link={shortenedLink} />
       </Td>
       <Td>
         <Text isTruncated>{link.slug}</Text>
