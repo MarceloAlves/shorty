@@ -12,6 +12,12 @@ A link shortener built using:
 
 ## Getting Started
 
+### Requirements
+
+- Node 14+
+- Yarn (`npm install -g yarn`)
+- Docker
+
 ### Running the project locally
 
 1. Clone this project
