@@ -4,7 +4,7 @@ import * as DBService from '@services/db'
 /**
  * NOTE:
  * `getServerSideProps` has a whole lot of request/response logic
- * so we're typing as `any` to skip the parts not needed for the test
+ * so we're typing as `any` to skip the passrts not needed for the test
  */
 
 describe('Slug getServerSideProps', () => {
@@ -16,8 +16,8 @@ describe('Slug getServerSideProps', () => {
         slug: 'slug',
         url: 'https://example.com',
         id: '12345',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        createdAt: new Date('2021-01-01T00:00:00.000Z'),
+        updatedAt: new Date('2021-01-01T00:00:00.000Z'),
       })
 
       const result = await getServerSideProps({ query: { slug: 'slug' } } as any)

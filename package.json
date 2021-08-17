@@ -18,9 +18,9 @@
     "db:migrate": "prisma migrate dev && prisma generate",
     "db:seed": "prisma db seed --preview-feature",
     "db:setup": "yarn db:migrate && yarn db:seed",
-    "docker:db:migrate": "docker-compose -f docker-compose.migrate.yml up -d",
     "docker:db:start": "docker-compose up -d --remove-orphans pg",
-    "docker:start": "docker-compose up --force-recreate -d --remove-orphans",
+    "docker:start": "docker-compose up -d --remove-orphans",
+    "docker:rebuild": "docker-compose build",
     "docker:stop": "docker-compose down && docker-compose rm -f"
   },
   "prettier": {
